@@ -3,10 +3,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-
-
-
-
 public class GameTetris {
 	
 	final String TITLE_OF_PROGRAM = "Tetris";
@@ -88,6 +84,30 @@ public class GameTetris {
 		 
 		 frame.getContentPane().add(BorderLayout.CENTER,canvasPanel);
 		 frame.setVisible(true);
+		
+		 Arrays.fill(mine[FIELD_HEIGHT],1);
+		 
+		 //main loop of game
+		 
+		 while(!gameOver) {
+			 try {
+				 Thread.sleep(SHOW_DELAY); 
+			 }catch(Exception e) {
+				 e.printStackTrace();
+			 }
+			 canvasPanel.repaint();
+			 if(figure.isTouchGround()) {
+				 figure.leaveOnGround();
+				 figure = new Figure();
+				 gameOver = figure.isCrossGround();
+			 }else {
+				 figure.stepDown();
+			 }
+		 }
+		 
+	}
+	
+	void checkFilling() {
 		
 	}
 
