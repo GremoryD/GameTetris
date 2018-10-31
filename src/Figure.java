@@ -109,8 +109,8 @@ public class Figure {
 	}
 
 	public boolean isCrossGround() {
-		// TODO Auto-generated method stub
-		return false;
+		 for (Block block : figure) if (GameTetris.mine[block.GetY()][block.GetX()] > 0) return true;
+         return false; 
 	}
 
 	public void stepDown() {
