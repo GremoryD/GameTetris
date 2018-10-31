@@ -6,18 +6,18 @@ import java.util.*;
 public class GameTetris {
 	
 	final String TITLE_OF_PROGRAM = "Tetris";
-	final int BLOCK_SIZE= 25;
-	final int ARC_RADIUS = 6;
-	final int FIELD_WIDTH = 10;
-	final int FIELD_HEIGHT = 18;
-	final int START_LOCATION = 180;
-	final int FIELD_DX = 7;
-	final int FIELD_DY = 26;
+	final static int BLOCK_SIZE= 25;
+	final static int ARC_RADIUS = 6;
+	final static int FIELD_WIDTH = 10;
+	final static int FIELD_HEIGHT = 18;
+	final static int START_LOCATION = 180;
+	final static int FIELD_DX = 7;
+	final static int FIELD_DY = 26;
 	//Arows buttons
-	final int LEFT = 37;
-	final int UP = 38;
-	final int RIGHT = 39;
-	final int DOWN = 40;
+	final static int LEFT = 37;
+	final static int UP = 38;
+	final static int RIGHT = 39;
+	final static int DOWN = 40;
 	
 	final int SHOW_DELAY= 350;//delay for animation
 	
