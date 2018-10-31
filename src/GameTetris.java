@@ -19,10 +19,10 @@ public class GameTetris {
 	final static int RIGHT = 39;
 	final static int DOWN = 40;
 	
-	final int SHOW_DELAY= 350;//delay for animation
+	final static int SHOW_DELAY= 350;//delay for animation
 	
 	
-	final int[][][] SHAPES = {
+	final static int[][][] SHAPES = {
 	        {{0,0,0,0}, {1,1,1,1}, {0,0,0,0}, {0,0,0,0}, {4, 0x00f0f0}}, // I
 	        {{0,0,0,0}, {0,1,1,0}, {0,1,1,0}, {0,0,0,0}, {4, 0xf0f000}}, // O
 	        {{1,0,0,0}, {1,1,1,0}, {0,0,0,0}, {0,0,0,0}, {3, 0x0000f0}}, // J
