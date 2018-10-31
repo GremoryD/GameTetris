@@ -74,6 +74,19 @@ public class GameTetris {
 		 frame.setLocation(START_LOCATION, START_LOCATION);
 		 frame.setResizable(false);
 		 
+		 canvasPanel.setBackground(Color.BLACK);
+		 frame.addKeyListener(new KeyAdapter() {
+			 public void keyPressed(KeyEvent e) {
+				 if(!gameOver) {
+					 if(e.getKeyCode()==DOWN)figure.drope();
+					 if(e.getKeyCode()==UP)figure.rotate();
+					 if(e.getKeyCode()==LEFT || e.getKeyCode()==RIGHT) figure.move(e.getKeyCode());
+				 }
+				canvasPanel.repaint();
+			 }
+		 });
+		 
+		 frame.getContentPane().add(BorderLayout.CENTER,canvasPanel);
 		 frame.setVisible(true);
 		
 	}
