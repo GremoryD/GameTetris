@@ -1,3 +1,4 @@
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -32,7 +33,9 @@ public class Figure {
 	}
 
 	public void drope() {
-		// TODO Auto-generated method stub
+		while(!isTouchGround()) {
+			stepDown();
+		}
 		
 	}
 
@@ -47,12 +50,12 @@ public class Figure {
 	}
 
 	public boolean isTouchGround() {
-		 
+		for(Block block:figure)if(GameTetris.mine[block.GetY()+1][block.GetX()]>0)return true;
 		return false;
 	}
 
 	public void leaveOnGround() {
-		// TODO Auto-generated method stub
+		for(Block block:figure)GameTetris.mine[block.GetY()][block.GetX()]=color;
 		
 	}
 
@@ -62,8 +65,13 @@ public class Figure {
 	}
 
 	public void stepDown() {
-		// TODO Auto-generated method stub
+		for(Block block:figure)block.setY(block.GetY()+1);
+		y++;
 		
+	}
+	
+	void paint(Graphics g) {
+		for(Block block:figure)block.paint(g, color);
 	}
  
 

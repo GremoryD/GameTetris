@@ -19,7 +19,7 @@ public class GameTetris {
 	final static int RIGHT = 39;
 	final static int DOWN = 40;
 	
-	final static int SHOW_DELAY= 350;//delay for animation
+	final static int SHOW_DELAY= 300;//delay for animation
 	
 	
 	final static int[][][] SHAPES = {
@@ -36,12 +36,12 @@ public class GameTetris {
 	
 	
 	int gameScore=0;
-	int[][] mine = new int[FIELD_HEIGHT+1][FIELD_WIDTH];
+	static int[][]  mine = new int[FIELD_HEIGHT+1][FIELD_WIDTH];
 	
 	JFrame frame;
 	Canvas canvasPanel = new Canvas();
 	Random random = new Random();
-	Figure figure = new Figure();
+	public Figure  figure = new Figure();
 	boolean gameOver = false;
 	
 	 final int[][] GAME_OVER_MSG = {
@@ -58,8 +58,8 @@ public class GameTetris {
 		        {1,0,0,1,0,1,1,0,0,0,1,0,0,0,0,1,0,0,1,0},
 		        {0,1,1,0,0,1,0,0,0,0,0,1,1,0,0,1,0,0,1,0}};
 	
-	public static void main(String[] args) {
-		 new GameTetris().go();
+	public static void main(String[] args) { 
+		new GameTetris().go();
 		 
 	}
 
@@ -109,6 +109,24 @@ public class GameTetris {
 	
 	void checkFilling() {
 		
+	}
+	
+	
+	public class Canvas extends JPanel{
+		 
+		 
+
+		@Override
+		public void paint(Graphics g) {
+			super.paint(g);
+			for(int i=0;i<FIELD_WIDTH;i++)
+				for(int j=0;j<FIELD_HEIGHT;j++)
+					if(mine[j][i]>0) {
+						g.setColor(new Color(mine[j][i]));
+						g.fill3DRect(i*BLOCK_SIZE+1, j*BLOCK_SIZE, BLOCK_SIZE-1, BLOCK_SIZE-1, true);
+					}
+		   figure.paint(g);
+		}
 	}
 
 }

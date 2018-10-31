@@ -9,8 +9,8 @@ public class Block {
 			setY(y);
 		}
 
-		private void setY(int y2) {this.y=y2; }
-		private void setX(int x2) {this.x=x2; }
+		public  void setY(int y2) {this.y=y2; }
+		public  void setX(int x2) {this.x=x2; }
 		public int GetX() {return this.x;}
 		public int GetY() {return this.y;}
 		
